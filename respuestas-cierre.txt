@@ -1,0 +1,19 @@
+15. Cierre
+
+1. ¿Qué código dejó de repetirse en UsersModel gracias al ORM?
+Ya no tengo que escribir las consultas SELECT, INSERT, UPDATE y DELETE en el modelo, porque eso ya está en Model.php. En UsersModel solo pongo el nombre de la tabla.
+
+2. ¿Cuál es la diferencia práctica entre all() y find()?
+all() trae todos los registros de la tabla y find() trae solo uno buscándolo por su id.
+
+3. ¿Qué recibe insert() para construir dinámicamente el INSERT?
+Recibe un arreglo con el nombre de la columna y su valor, y con eso arma las columnas y los parámetros.
+
+4. ¿Por qué los métodos del Query Builder retornan $this?
+Para poder encadenar los métodos uno tras otro, por ejemplo where()->orderBy()->limit()->get().
+
+5. ¿Qué responsabilidad mantiene el Controller y cuál asume el ORM?
+El controller recibe los datos y decide qué vista mostrar, y el ORM se encarga de hacer las consultas a la base de datos.
+
+Pregunta de comprobación:
+SELECT id, usuario, email, estado FROM usuarios WHERE estado = 1 ORDER BY id DESC LIMIT 5
